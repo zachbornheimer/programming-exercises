@@ -1,3 +1,8 @@
+/*
+Exercise 1-5 in K&R 2nd Edition
+Written by Z. Bornheimer (provided as is without warranty).
+*/
+
 #include <stdio.h>
 /* print Fahrenheit-Celsius Table
     for fahr = 300, 280, ..., 0; floating-point version */
