@@ -4,7 +4,7 @@ Written by Z. Bornheimer (provided as is without warranty).
 */
 #include <stdio.h>
 
-/* copy input to output and replace strings of blanks with a single blank */
+/* copy input to output and replace tabs with \t, backspaces with \b, and backslashes with \\ */
 main()
 {
     int c;
