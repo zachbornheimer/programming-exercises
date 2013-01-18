@@ -1,6 +1,6 @@
 /*
-Exercise 1-13 in K&R 2nd Edition
-Horizontal Histuogram
+Exercise 1-13a in K&R 2nd Edition
+Horizontal Histogram
 Written by Z. Bornheimer (provided as is without warranty).
 */
 #include <stdio.h>
