@@ -2,7 +2,7 @@
   "These solutions are for the book __Lisp__ by Winston and Horn, 3rd edition.  These solutions were written by Z. Bornheimer.  They are relased as is (warantee-less).")
 (defvar *chapters* '(3 4))
 (defvar *chapter3* '((1 exchange) (2 construct) (3 rotate-left) (4 rotate-right) (5 palindromize) (6 (f-to-c c-to-f))))
-(defvar *chapter4* '((1 divisible-by-three) (2 palidnromep) (3 rightp) (5 abs-min-max) ))
+(defvar *chapter4* '((1 divisible-by-three) (2 palidnromep) (3 rightp) (5 abs-min-max) (6 not-or-and))
 
 (defun exchange (var)
   (list (first (last var)) (first var)))
@@ -84,3 +84,34 @@
       (tail-recurse-max largest (first firstelement) (append (rest firstelement) restelement))
       (when (and (atom firstelement) (not (null firstelement)))
         (tail-recurse-max largest restelement '())))))
+
+(defun not-or-and (func &rest args)
+  (cond
+    ((equal func 'not) (not-cond (first args)))
+    ((equal func 'or) (or-cond args))
+    ((equal func 'and) (and-cond args))))
+
+(defun not-cond (arg)
+  (cond
+    (arg nil)
+    (t t)))
+
+(defun or-cond (args)
+  (let*
+    ( (arg1 (first args))
+      (arg2 (first (rest args)))
+      (arg3 (first (rest (rest args)))))
+    (cond
+      (arg1)
+      (arg2)
+      (t arg3))))
+
+(defun and-cond (args)
+  (let*
+    ( (arg1 (first args))
+      (arg2 (first (rest args)))
+      (arg3 (first (rest (rest args)))))
+    (cond
+      ((not arg1) nil)
+      ((not arg2) nil)
+      (t arg3))))
