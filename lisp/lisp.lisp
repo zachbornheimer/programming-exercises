@@ -2,7 +2,7 @@
   "These solutions are for the book __Lisp__ by Winston and Horn, 3rd edition.  These solutions were written by Z. Bornheimer.  They are relased as is (warantee-less).")
 (defvar *chapters* '(3 4))
 (defvar *chapter3* '((1 exchange) (2 construct) (3 rotate-left) (4 rotate-right) (5 palindromize) (6 (f-to-c c-to-f))))
-(defvar *chapter4* '((1 divisible-by-three) (2 palidnromep) (3 rightp) (5 abs-min-max) (6 not-or-and))
+(defvar *chapter4* '((1 divisible-by-three) (2 palidnromep) (3 rightp) (5 abs-min-max) (6 not-or-and) (7 check-temperature)))
 
 (defun exchange (var)
   (list (first (last var)) (first var)))
@@ -115,3 +115,9 @@
       ((not arg1) nil)
       ((not arg2) nil)
       (t arg3))))
+
+(defun check-temperature (temp)
+  (cond
+    ((> temp 100) 'RIDICULOUSLY-HOT)
+    ((< temp 0) 'RIDICULOUSLY-COLD)
+    (t 'OK)))
