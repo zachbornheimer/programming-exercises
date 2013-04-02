@@ -3,7 +3,7 @@
 (defvar *chapters* '(3 4 5))
 (defvar *chapter3* '((1 exchange) (2 construct) (3 rotate-left) (4 rotate-right) (5 palindromize) (6 (f-to-c c-to-f))))
 (defvar *chapter4* '((1 divisible-by-three) (2 palidnromep) (3 rightp) (5 abs-min-max) (6 not-or-and) (7 check-temperature)))
-(defvar *chapter5* '(1 skip-first-n))
+(defvar *chapter5* '((1 skip-first-n) (2 keep-first-n) (3 keep-first-n-cleverly))
 
 (defun exchange (var)
   (list (first (last var)) (first var)))
@@ -134,3 +134,9 @@
     (zerop num) nil
     (cons (first list) (keep-first-n (- num 1) (rest list)))))
     
+(defun keep-first-n-cleverly (num list)
+  (keep-first-n-cleverly-aux num list '()))
+
+(defun keep-first-n-cleverly-aux (num list l)
+  (if (zerop num) (reverse l)
+      (keep-first-n-cleverly-aux (- num 1) (rest list) (cons (first list) l))))
