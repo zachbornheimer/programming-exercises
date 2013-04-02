@@ -128,3 +128,9 @@
     ((zerop num) list)
     ((endp list) num)
     (t (skip-first-n (- num 1) (rest list)))))
+
+(defun keep-first-n (num list)
+  (if
+    (zerop num) nil
+    (cons (first list) (keep-first-n (- num 1) (rest list)))))
+    
