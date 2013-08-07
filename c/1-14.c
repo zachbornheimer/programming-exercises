@@ -1,6 +1,6 @@
 /*
 Exercise 1-14 in K&R 2nd Edition
-Vertical Histogram
+Histogram of Character Types
 Written by Z. Bornheimer (provided as is without warranty).
 */
 #include <stdio.h>
