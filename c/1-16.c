@@ -5,8 +5,6 @@ Written by Z. Bornheimer (provided as is without warranty).
 */
 
 
-/* INCOMPLETE!! Need to do the task assigned.  All I did was copy the code in from the book (and try a few things, commented below) */
-
 
 #include <stdio.h>
 #define MAXLINE 1000
@@ -29,7 +27,7 @@ main()
             copy(longest, line);
         }
     if (max > 0) /* there was a line */
-        printf("%s", longest);
+        printf("CHARS: %d, STRING: %s", max, longest);
     return 0;
 }
 
